@@ -1,0 +1,75 @@
+#sample url
+https://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=Bst8DsrxQ7RorD2aw2vb4FGO7mfU4MQ7yrH%2FSYzAN6hYr5OaDJZDV4fYUgUjGtexpTALuChYvNgqV5Uhc8%2BSgQ%3D%3D&pageNo=1&numOfRows=10
+
+#요청변수
+유기날짜(검색 시작일)	bgnde		 	유기날짜(검색 시작일)(YYYYMMDD)
+유기날짜(검색 종료일)	endde		 	유기날짜(검색 종료일)(YYYYMMDD)
+축종코드	            upkind		 	축종코드- 개 : 417000 - 고양이 : 422400 - 기타 : 429900
+품종코드	            kind		 	품종코드(품종 조회 OPEN API 참조)
+시도코드	            upr_cd		 	시도코드(시도 조회 OPEN API 참조)
+시군구코드	            org_cd		 	시군구코드(시군구 조회 OPENAPI 참조)
+보호소번호	            care_reg_no		보호소번호(보호소 조회 OPEN API 참조)
+상태	                state			상태 - 전체 : null(빈값) - 공고중 : notice - 보호중 : protect
+중성화여부	            neuter_yn		상태 - 전체 : null(빈값) - 예 : Y - 아니오 : N - 미상 : U
+페이지 번호	            pageNo			페이지 번호 기본값 : 1
+페이지당 보여줄 개수	numOfRows		페이지당 보여줄 개수(1,000 이하)기본값 : 10
+응답형태	            _type			xml(기본값) 또는 json
+# 성별이 없는것은 아쉽네요
+# 카테고리 나누리고 다룰것은 검색 시작일(엔트리), 검색 종료일(엔트리), 시도코드(지역이름의 메뉴버튼), 축종코드(라디오버튼), 상태(라디오버튼)
+# 시작일 종료일은 일단 엔트리를 쓰는데, 메뉴버튼이나 달력처럼 만들 수 있으면 좋겠네요.
+
+#sample xml
+<desertionNo>469569202300370</desertionNo>
+<filename>http://www.animal.go.kr/files/shelter/2023/05/202305232105482_s.jpg</filename>
+<happenDt>20230523</happenDt>
+<happenPlace>새롬동 새롬북로13 </happenPlace>
+<kindCd>[고양이] 한국 고양이</kindCd>
+<colorCd>노랑 얼룩</colorCd>
+<age>2023(60일미만)(년생)</age>
+<weight>0.19(Kg)</weight>
+<noticeNo>세종-세종-2023-00188</noticeNo>
+<noticeSdt>20230523</noticeSdt>
+<noticeEdt>20230602</noticeEdt>
+<popfile>http://www.animal.go.kr/files/shelter/2023/05/202305232105482.jpg</popfile>
+<processState>보호중</processState>
+<sexCd>M</sexCd>
+<neuterYn>U</neuterYn>
+<specialMark>30일 추정</specialMark>
+<careNm>세종유기동물보호센터</careNm>
+<careTel>010-4435-3720</careTel>
+<careAddr>세종특별자치시 전동면 미륵당1길 188 (전동면) </careAddr>
+<orgNm>세종특별자치시</orgNm>
+<chargeNm>동물복지담당</chargeNm>
+<officetel>044-300-7616</officetel>
+
+항목명(국문)        항목명(영문)		샘플데이터	                        항목설명
+오류메시지	        errorMsg		 	                                    오류 상세 내역(예: 시군구코드 필수 파라미터 누락)
+요청번호	        reqNo		        81	                                요청 고유 번호
+결과코드	        resultCode		    00	                                결과코드
+결과메세지	        resultMsg		    NORMAL SERVICE.	                    결과메세지
+유기번호	        desertionNo		    444450202101068	                    유기번호
+썸네일 이미지       filename		    url.jpg	                            Thumbnail Image
+접수일	            happenDt		    20211231	                        접수일(YYYYMMDD)
+발견장소	        happenPlace		    공주시 우금티터널	                발견장소
+품종	            kindCd		        [개] 믹스견                         품종 ( [개] 포메라니안 )
+색상	            colorCd		        갈색	                            색상
+나이	            age		            2019(년생)	                        나이
+체중	            weight		        5(Kg)	                            체중
+공고번호	        noticeNo		    충남-공주-2022-00001	            공고번호
+공고시작일	        noticeSdt		    20220104	                        공고시작일(YYYYMMDD)
+공고종료일	        noticeEdt		    20220117	                        공고종료일(YYYYMMDD)
+고화질 Image	    popfile	    	    url.png	                            Image
+상태	            processState		보호중	                            상태
+성별	            sexCd		        M	                                M : 수컷, F : 암컷, Q : 미상
+중성화여부	        neuterYn		    N	                                Y : 예, N : 아니오, U : 미상
+특징	            specialMark		    겁이많음, 털엉킴, 치석증	        특징
+보호소이름	        careNm		        이기영수의과병원	                보호소이름
+보호소전화번호      careTel		        041-853-7575	                    보호소전화번호
+보호장소	        careAddr		    충청남도 공주시 감영길 7 (반죽동)   보호장소
+관할기관	        orgNm		        충청남도 공주시	                    관할기관
+담당자	            chargeNm		    축산유통팀	                        담당자
+담당자연락처	    officetel		    02-1111-2222	                    담당자연락처
+특이사항	        noticeComment		                                    특이사항
+한 페이지 결과 수	numOfRows		    10	                                한 페이지 결과 수
+페이지 번호	        pageNo		        1	                                페이지 번호
+전체 결과 수	    totalCount		    6840	                            전체 결과 수
